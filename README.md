@@ -43,12 +43,12 @@ class TestValidateIdentifier:
     @pytest.mark.timeout(_TIMEOUT)
     def test_valido_comprimento_cinco(self):
         assert self.id.validateIdentifier("abcde")
-        
+
 ```
 o teste test_invalido_ultimo_caractere testa o limite posicional (um erro no final da string) e é o teste que prova a existência do bug no código original. test_valido_comprimento_um garante que uma string com 1 caractere seja valida (limite inferior), e test_valido_comprimento_cinco garante que uma string com 5 caracteres seja valida (limite superior).
 
 nas imagens abaixo podemos ver o teste test_invalido_ultimo_caractere falhando devido ao byg no código  que retornou True. Para remover o bug basta tirarmos o -1 do while que quando chegar em i=3 retorna o caractere # e portanto self.valid_f('#') vai retornar False como deveria.
 
-![analise_p1](imagens/analise_inicial_p1.png "Print 1 Análise Final")
+![analise_p1](imagens/analise_p2.png "Print 1 Análise Final")
 
-![analise_p2](imagens/analise_inicial_p2.png "Print 2 Análise Final")
+![analise_p2](imagens/analise_p3.png "Print 2 Análise Final")
