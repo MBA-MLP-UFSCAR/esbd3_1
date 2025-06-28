@@ -26,3 +26,15 @@ class TestValidateIdentifier:
     @pytest.mark.timeout(_TIMEOUT)
     def test_invalido_caracter_nao_letra_ou_digito(self):
         assert not self.id.validateIdentifier("Z#12")
+
+    @pytest.mark.timeout(_TIMEOUT)
+    def test_invalido_ultimo_caractere(self):
+        assert not self.id.validateIdentifier("ab1#")
+
+    @pytest.mark.timeout(_TIMEOUT)
+    def test_valido_comprimento_um(self):
+        assert self.id.validateIdentifier("A")
+        
+    @pytest.mark.timeout(_TIMEOUT)
+    def test_valido_comprimento_cinco(self):
+        assert self.id.validateIdentifier("abcde")
